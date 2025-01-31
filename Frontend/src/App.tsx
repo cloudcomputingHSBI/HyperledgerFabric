@@ -11,7 +11,7 @@ import Header from './pages/Header';
 import LoginPage from './pages/Authentication/Login';
 import RegisterGeneral from './pages/Authentication/RegisterGeneral';
 import RegisterMRZ from './pages/Authentication/RegisterMRZ';
-import { ToolbarItem } from 'react-form-builder2';
+//import { ToolbarItem } from 'react-form-builder2';
 import CreateSurvey from './pages/createSurvey/createSurvey';
 
 // Funktion zum Überprüfen, ob ein Benutzer eingeloggt ist

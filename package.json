@@ -1,0 +1,28 @@
+{
+  "name": "hyperledgerfabric",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloudcomputingHSBI/HyperledgerFabric.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cloudcomputingHSBI/HyperledgerFabric/issues"
+  },
+  "homepage": "https://github.com/cloudcomputingHSBI/HyperledgerFabric#readme",
+  "description": "",
+  "dependencies": {
+    "fabric-contract-api": "^2.5.8",
+    "fabric-shim": "^2.5.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.12.0",
+    "typescript": "^5.7.3"
+  }
+}
