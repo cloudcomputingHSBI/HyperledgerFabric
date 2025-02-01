@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ReactFormBuilder } from 'react-form-builder2';
 import 'react-form-builder2/dist/app.css';
 import '../../components/FormBuilder/FormBuilder.css'; // ggf. Pfad anpassen
-import Demobar from '../../components/Demobar/Demobar'; // ggf. Pfad anpassen
+import Demobar from '../../components/Demobar/Demobar';
 
 const CreateSurvey = () => {
   const navigate = useNavigate(); // Verwende den useNavigate-Hook
