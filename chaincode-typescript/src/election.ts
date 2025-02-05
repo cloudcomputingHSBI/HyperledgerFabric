@@ -1,4 +1,6 @@
 import { Context, Contract, Transaction } from 'fabric-contract-api';
+import { createHash } from 'crypto'; // Node.js crypto Modul für Hashing
+
 
 export class ElectionContract extends Contract {
 
@@ -37,7 +39,7 @@ export class ElectionContract extends Contract {
      * @param candidate - Der Kandidat, für den die Stimme abgegeben wird
      */
     @Transaction()
-    async castVote(ctx: Context, electionId: string, candidate: string): Promise<void> {
+    async castVote(ctx: Context, electionId: string, candidate: string, caller: string): Promise<void> {
         // Wahlen abrufen
         const electionData = await ctx.stub.getState(electionId);
         
@@ -51,8 +53,11 @@ export class ElectionContract extends Contract {
 
         
         
-        const voterId = ctx.clientIdentity.getID();
-        if (election.voters.includes(voterId)) {
+        // **Caller-Identifikation hashen**
+        const hashedCaller = createHash('sha256').update(caller).digest('hex');
+
+        // Prüfen, ob der Benutzer bereits abgestimmt hat
+        if (election.voters.includes(hashedCaller)) {
             throw new Error('Wähler hat bereits abgestimmt.');
         }
     
@@ -69,7 +74,7 @@ export class ElectionContract extends Contract {
         // TODO: Hier ist der nächste Fehler weil er den Kandidat nicht findet
     
         election.votes[candidate] = (election.votes[candidate] || 0) + 1;
-        election.voters.push(voterId);  // Füge den Wähler zu voters hinzu
+        election.voters.push(hashedCaller);  // Füge den Wähler zu voters hinzu
         
         // Wahlen aktualisieren
         await ctx.stub.putState(electionId, Buffer.from(JSON.stringify(election)));

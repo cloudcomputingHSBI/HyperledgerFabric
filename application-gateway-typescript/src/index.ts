@@ -14,10 +14,10 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.get('/api', async (req, res) => {
-    console.log("Iam unalive");
-    res.send("API route reached");
-});
+// app.get('/api', async (req, res) => {
+//     console.log("Iam unalive");
+//     res.send("API route reached");
+// });
 
 app.use('/api', routes);
    

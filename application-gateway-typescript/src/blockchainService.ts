@@ -57,14 +57,17 @@ async function getContract() {
 
 export async function createElection(electionId: string, candidates: string, startTime: number, endTime: number) {
     const contract = await getContract();
+    console.log(electionId, candidates, String(startTime), String(endTime));
     await contract.submitTransaction('createElection', electionId, candidates, String(startTime), String(endTime));
     return {message: 'Wahl erstellt'};
     
 }
 
-export async function castVote(electionId: string, candidate: string){
+export async function castVote(electionId: string, candidate: string, voter_id: string){
     const contract = await getContract();
-    await contract.submitTransaction('castVote', electionId, candidate);
+    console.log('LOG');
+    await contract.submitTransaction('castVote', electionId, candidate, voter_id);
+    console.log('Erfoglreiche Stimme');
     return {message: 'Stimme abgegeben'};
 }
 
