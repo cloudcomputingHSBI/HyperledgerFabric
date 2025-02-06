@@ -65,7 +65,6 @@ export async function createElection(electionId: string, candidates: string, sta
 
 export async function castVote(electionId: string, candidate: string, voter_id: string){
     const contract = await getContract();
-    console.log('LOG');
     await contract.submitTransaction('castVote', electionId, candidate, voter_id);
     console.log('Erfoglreiche Stimme');
     return {message: 'Stimme abgegeben'};
