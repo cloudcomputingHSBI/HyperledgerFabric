@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+//const axios = require('axios');
+
 // Basis-URL für die API-Endpunkte
 const API_BASE_URL = "http://localhost:6666/api";
 // Anzahl der Transaktionen für den TPS-Test
