@@ -30,9 +30,7 @@ Die Blockchain-Netze wurden dazu verwendet, um Wahlen zu simulieren
 - Backend
 - application-gateway-typescript/src:
   - Stellt Verbindung zur Blockchain her und interagiert mit dem Chaincode (Smart Contract)
-  - Führt drei Hauptaktionen durch:
-    Wahl erstellen
-    Stimme abgeben
-    Wahlergebnis abrufen (keine Transaktion, ändert den Ledger nicht)
+  - Führt drei Hauptaktionen durch: Wahl erstellen, Stimme abgeben und Wahlergebnis abrufen (keine Transaktion, ändert den Ledger nicht)
 - chaincode-typescript/src: Mithilfe der Fabric-Contract-API implementierter Chaincode (Smartcontract). Dieser Contract läuft auf den Peers innerhalb des Fabric-Netzwerks – alles, was hier passiert, wird in der Blockchain gespeichert und validiert.
+
 
