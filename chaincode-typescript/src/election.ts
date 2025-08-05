@@ -71,7 +71,7 @@ export class ElectionContract extends Contract {
         if (!election.candidatesArray.includes(candidate)) {
             throw new Error('Ungültiger Kandidat.');
         }
-        // TODO: Hier ist der nächste Fehler weil er den Kandidat nicht findet
+
     
         election.votes[candidate] = (election.votes[candidate] || 0) + 1;
         election.voters.push(hashedCaller);  // Füge den Wähler zu voters hinzu
